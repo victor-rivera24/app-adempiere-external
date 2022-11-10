@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "node": "^14.21.0",
+    "pg": "^8.8.0"
+  },
+  "name": "app-adempiere",
+  "version": "1.0.0",
+  "description": "API ADempiere para terceros",
+  "main": "app-adempiere",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "ADempiere",
+    "WebService"
+  ],
+  "author": "Victor Rivera",
+  "license": "ISC"
+}
