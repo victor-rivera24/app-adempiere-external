@@ -96,4 +96,27 @@ module.exports = {
         return result;
     },
 
+
+     /**
+     * Busca el socio de negocio por RFC.
+     * 
+     * @since 10/11/2022 se genero el método
+     * @author Victor Rivera
+     */ 
+      async searchRFC(){
+
+        const params = [];
+        let query = fs.readFileSync("./SQL/socionegocio_general_estados.sql","utf8");   
+
+        const result = await client_pgsql.query(query, params)
+            .then(res => {
+                return {status_:"success","data_":res.rows};
+            }).catch( e => {
+                console.log(e);
+                return {status_:"error","data_":e.stack}; 
+            }
+        );
+        return result;
+    },
+
 }

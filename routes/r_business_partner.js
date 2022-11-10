@@ -106,4 +106,21 @@ router.get('/rfv/statesMexicanRepublic', verifyTokenUser, function (req, res, ne
         }); 
 });
 
+/**
+ * 
+ * Ejemplo
+ * http://localhost:5006/v1/rfv/statesMexicanRepublic
+ */
+ router.get('/rfv/searchRFC', verifyTokenUser, function (req, res, next) {
+    let params = [];
+    businesspartner.searchRFC()
+        .then(response_ => { 
+            res.json(response_);
+        }).catch(err => { 
+            console.log(err);
+            return res.status(200).send({status:"error",data:err});
+        }); 
+});
+
+
 module.exports = router;
